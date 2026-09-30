@@ -1,9 +1,7 @@
-# `swxg+`
-swxgPLUS is a Python package for modern stochastic weather generation. It is an extension of the original swxg package, building on its stochastic weather-generation framework while expanding its functionality. The current implementation models minimum and maximum temperature (TEMP_MIN, TEMP_MAX), precipitation (PRECIP), irradiance (IRRADIANCE), and evapotranspiration (ETP).
-
+# `swxg`
 `swxg` is a Python package for modern [stochastic weather generation](https://www.ipcc-data.org/guidelines/pages/weather_generators.html). It is suitable for any use case where traces of precipitation, temperature, and its internal variability across a single or multiple sites impact the model outcomes to be investigated. It expands on existing generators which are often designed for more niche applications like replicating weather regimes, downscaling global circulation models, or using weather as an intermediate step in determining flood or drought indices.
 
-All that is needed to use `swxgPLUS` is a set of historical weather observations, including the relevant meteorological variables, one or more locations where the observations were collected, and a timestamp for each observation. `swxgPLUS` can generate arbitrarily long sequences of daily or monthly weather variables while preserving key statistical, temporal, and spatial dependencies from the input observations by:
+All that is needed to use `swxg` is a set of data with precipitation and temperature observations, one or more locations where the observations were collected, and a timestamp for each of the collected observations. `swxg` quickly generates arbitrarily-long sequences of monthly or daily weather variables that match the spatial and temporal correlations from input observations by: 
   1. fitting observed precipitation individually to a (Gaussian mixture) hidden Markov model with 1 or more hidden states; 
   2. fitting both observed precipitation and temperature with hydroclimatic copulas;
   3. sampling precipitation from its fit, disaggregating to finer resolution where necessary, and;
